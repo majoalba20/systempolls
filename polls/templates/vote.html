@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}Vote{% endblock %}
+
+{% block main %}
+
+<div class="py-10 w-screen">
+    <div class="bg-purple-300 md:w-3/6 w-5/6 m-auto h-72 rounded-lg">
+        <p class="pt-3 pl-3 font-bold">Cast Your Vote</p>
+        <div class="divider"></div> 
+        <strong class="pl-3">{{ poll.question }}</strong>
+        <form method="post">
+            {% csrf_token %}
+            <div class="flex justify-around items-center p-7">
+                <label class="flex items-center gap-3">
+                    <input type="radio" name="poll" value="option1" class="radio radio-primary" checked>
+                    {{ poll.option_one }}
+                </label>
+                <label class="flex items-center gap-3">
+                    <input type="radio" name="poll" value="option2" class="radio radio-primary">
+                    {{ poll.option_two }}
+                </label>
+                <label class="flex items-center gap-3">
+                    <input type="radio" name="poll" value="option3" class="radio radio-primary">
+                    {{ poll.option_three }}
+                </label>
+            </div>
+            <div class="flex justify-center pt-4">
+                <button type="submit" class="btn btn-success bg-emerald-400">Enviar</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

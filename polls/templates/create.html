@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load widget_tweaks %}
+{% block title %}Create Poll{% endblock %}
+
+{% block main %}
+
+<div class="py-10 w-screen">
+    <div class="bg-purple-300 md:w-3/6 w-5/6 m-auto h-96 rounded-lg">
+        <p class="pt-3 pl-3 font-bold">Create a new Poll</p>
+        <div class="divider"></div> 
+        <form method="post" class="w-full">
+            {% csrf_token %}
+            <div class="flex flex-col pl-3 pr-3">
+                <label for="question">Enter poll question</label>
+                {% render_field form.question class="textarea textarea-secondary" rows="2" %}
+            </div>
+            <div class="flex justify-between lg:p-4 p-3 gap-3 items-center">
+                <div class="flex flex-col">
+                    <label for="option1">Option 1</label>
+                    {% render_field form.option_one class="input input-bordered input-secondary w-full max-w-xs" %}
+                </div>
+                <div class="flex flex-col">
+                    <label for="option2">Option 2</label>
+                    {% render_field form.option_two class="input input-bordered input-secondary w-full max-w-xs" %}                </div>
+                <div class="flex flex-col">
+                    <label for="option3">Option 3</label>
+                    {% render_field form.option_three class="input input-bordered input-secondary w-full max-w-xs" %}                </div>
+            </div>
+            <div class="flex justify-center pt-5">
+                <button type="submit" class="btn btn-success bg-emerald-400">Enviar</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

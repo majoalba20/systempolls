@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}Homepage{% endblock %}
+
+{% block main %}
+<div class="overflow-x-auto py-14  w-screen min-h-full">
+    <table class="table sm:w-2/4 w-2/6 m-auto">
+        <!-- head -->
+        <thead>
+            <tr>
+                <th class="text-center">Available Polls</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                {% for poll in polls %}
+                <th class="flex justify-between items-center bg-gray-200">
+                    <strong class="text-sm">{{ poll.question }}</strong>
+                    <div class="flex sm:flex-row gap-2 flex-col items-center">
+                        <a href="{%url 'vote' poll.id%}"><button class="btn btn-secondary">Vote</button></a>
+                        <a href="{%url 'results' poll.id%}"><button class="btn btn-success">View Results</button></a>
+                    </div>
+                </th>
+                {% endfor %}
+            </tr>
+        </tbody>
+    </table>
+</div>
+{% endblock %}
