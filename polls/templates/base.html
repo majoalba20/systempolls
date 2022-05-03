@@ -8,7 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@2.14.2/dist/full.css" rel="stylesheet" type="text/css" />
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2/dist/tailwind.min.css" rel="stylesheet" type="text/css" />
 </head>
-<body>
+<body class="flex flex-col min-h-screen">
     <div class="navbar bg-gray-400">
         <div class="navbar-start">
             <a href="{% url 'home' %}" class="btn btn-ghost normal-case text-xl">PollsApp</a>
@@ -28,10 +28,5 @@
     <div class="container">
         {% block main %}{% endblock %}
     </div>
-    <footer class="footer footer-center p-4 bg-gray-400 absolute bottom-0 text-base-content">
-        <div>
-            <p>Copyright © 2022 - All right reserved by Majo Alba</p>
-        </div>
-    </footer>
 </body>
 </html>
