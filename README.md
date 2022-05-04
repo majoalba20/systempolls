@@ -21,3 +21,8 @@ Poll app using Django
     <li>María José Alba</li>
 </ul>
 
+<h1>Deploy 🖥️</h1>
+
+<ul>
+    <li>https://systempollsmajo.herokuapp.com/</li>
+</ul>
